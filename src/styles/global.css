@@ -1,0 +1,13 @@
+/* Ajustes globais complementares ao MUI CssBaseline. */
+
+/* Evita que headers fixos sobreponham âncoras durante a navegação. */
+html {
+  scroll-padding-top: 96px;
+}
+
+/* Melhora a renderização da fonte variável Inter. */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
