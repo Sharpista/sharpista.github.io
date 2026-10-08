@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import brandLogo from '../../assets/arx-dev.svg'
 import { useLocation } from 'react-router-dom'
 import { Link as RouterLink } from 'react-router-dom'
 import Box from '@mui/material/Box'
@@ -95,17 +96,21 @@ export function SiteHeader() {
             gap: 2,
           }}
         >
-          <Stack
+          <Box
             component={RouterLink}
             to="/"
-            direction="row"
-            alignItems="baseline"
-            sx={{ textDecoration: 'none', color: 'text.primary' }}
+            aria-label={`${siteConfig.brand} — página inicial`}
+            sx={{ display: 'inline-flex', flexShrink: 0 }}
           >
-            <Box sx={{ typography: 'h6', fontWeight: 700, letterSpacing: '-0.01em' }}>
-              {siteConfig.brand}
-            </Box>
-          </Stack>
+            <Box
+              component="img"
+              src={brandLogo}
+              alt={siteConfig.brand}
+              width={480}
+              height={120}
+              sx={{ display: 'block', width: { xs: 160, sm: 208, md: 224 }, height: 'auto' }}
+            />
+          </Box>
 
           <Stack
             direction="row"

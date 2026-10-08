@@ -1,9 +1,9 @@
 export const siteConfig = {
-  brand: 'Alexandre Filho.',
+  brand: 'ARX DEV',
   name: 'Alexandre Filho',
   tagline: 'Software Engineering & Consulting',
   url: 'https://sharpista.github.io/',
-  homeTitle: 'Alexandre Filho. — Software Engineering & Consulting',
+  homeTitle: 'ARX DEV — Software Engineering & Consulting',
   homeDescription:
     'Consultoria independente de engenharia de software: desenvolvimento de sistemas, arquitetura de soluções, modernização tecnológica e cloud para empresas que precisam evoluir.',
   /**

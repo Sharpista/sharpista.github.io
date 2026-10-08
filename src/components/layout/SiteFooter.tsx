@@ -1,3 +1,4 @@
+import brandLogo from '../../assets/arx-dev.svg'
 import { Link as RouterLink } from 'react-router-dom'
 import Box from '@mui/material/Box'
 import Divider from '@mui/material/Divider'
@@ -38,9 +39,14 @@ export function SiteFooter() {
           }}
         >
           <Stack spacing={1.5}>
-            <Typography variant="h4" sx={{ fontWeight: 700, letterSpacing: '-0.01em' }}>
-              {siteConfig.brand}
-            </Typography>
+            <Box
+              component="img"
+              src={brandLogo}
+              alt={siteConfig.brand}
+              width={480}
+              height={120}
+              sx={{ display: 'block', width: 280, maxWidth: '100%', height: 'auto' }}
+            />
             <Typography variant="overline" component="p" color="text.secondary" sx={{ mb: 0.5 }}>
               {siteConfig.tagline}
             </Typography>
