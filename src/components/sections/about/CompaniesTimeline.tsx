@@ -14,42 +14,33 @@ export function CompaniesTimeline() {
         subtitle="Ambientes corporativos exigentes, com forte crédito por confiabilidade, segurança e qualidade de entrega."
       />
 
-      <Box
-        component="ol"
-        sx={{
-          listStyle: 'none',
-          p: 0,
-          m: 0,
-          maxWidth: 760,
-          position: 'relative',
-          '::before': {
-            content: '" "',
-            position: 'absolute',
-            top: 10,
-            bottom: 10,
-            left: 9,
-            width: 1,
-            bgcolor: 'divider',
-          },
-        }}
-      >
+      <Box component="ol" sx={{ listStyle: 'none', p: 0, m: 0, maxWidth: 1040 }}>
         {companies.map((company) => (
           <Box
             key={company.name}
             component="li"
             sx={{
               position: 'relative',
-              pl: 5,
-              pb: { xs: 4, md: 5 },
-              mb: { xs: 1, md: 2 },
-              ':last-of-type': { pb: 0, mb: 0, '::after': { display: 'none' } },
+              pl: { xs: 4, sm: 5 },
+              pb: 2.5,
+              '::before': {
+                content: '""',
+                position: 'absolute',
+                top: 33,
+                bottom: -33,
+                left: 9,
+                width: '1px',
+                bgcolor: 'divider',
+              },
+              ':last-of-type': { pb: 0, '::before': { display: 'none' } },
             }}
           >
             <Box
+              aria-hidden="true"
               sx={{
                 position: 'absolute',
                 left: 0,
-                top: 3,
+                top: 24,
                 width: 19,
                 height: 19,
                 borderRadius: '50%',
@@ -62,24 +53,36 @@ export function CompaniesTimeline() {
             >
               <Box sx={{ width: 7, height: 7, borderRadius: '50%', bgcolor: 'text.primary' }} />
             </Box>
-            <Stack spacing={1}>
-              <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1, mb: 1 }}>
-                <Typography variant="h3" component="h3" sx={{ fontSize: { xs: '1.25rem', md: '1.5rem' } }}>
+            <Box
+              sx={{
+                display: 'grid',
+                gridTemplateColumns: { xs: 'minmax(0, 1fr)', md: 'minmax(0, 0.9fr) minmax(0, 1.1fr)' },
+                gap: { xs: 1.5, md: 4 },
+                alignItems: 'start',
+                p: { xs: 2, sm: 3 },
+                border: '1px solid',
+                borderColor: 'divider',
+                borderRadius: '12px',
+                bgcolor: 'background.paper',
+              }}
+            >
+              <Stack spacing={1} sx={{ minWidth: 0 }}>
+                <Typography variant="h3" component="h3" sx={{ fontSize: { xs: '1.125rem', md: '1.375rem' } }}>
                   {company.name}
                 </Typography>
                 <Typography variant="overline" component="span" color="text.secondary">
                   {company.sector}
                 </Typography>
-              </Box>
-              <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 640 }}>
+              </Stack>
+              <Typography variant="body1" color="text.secondary" sx={{ minWidth: 0 }}>
                 {company.description}
               </Typography>
-            </Stack>
+            </Box>
           </Box>
         ))}
       </Box>
 
-      <Typography variant="body2" color="text.disabled" sx={{ mt: 4, maxWidth: 640 }}>
+      <Typography variant="body2" color="text.secondary" sx={{ mt: 3, maxWidth: 760 }}>
         {companiesDisclaimer}
       </Typography>
     </Section>
