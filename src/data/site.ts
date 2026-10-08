@@ -8,14 +8,14 @@ export const siteConfig = {
     'Consultoria independente de engenharia de software: desenvolvimento de sistemas, arquitetura de soluções, modernização tecnológica e cloud para empresas que precisam evoluir.',
   /**
    * Canais de contato exibidos no site.
-   * Configure via `.env.local` (variáveis VITE_) ou ajuste os fallbacks.
+   * Configure via `.env.local` ou variáveis VITE_ do ambiente github-pages no Actions.
    * Links vazios simplesmente não são exibidos — nunca são inventados.
    */
   contacts: {
     email: import.meta.env.VITE_CONTACT_EMAIL ?? '',
     whatsapp: import.meta.env.VITE_WHATSAPP_NUMBER ?? '',
     linkedin: import.meta.env.VITE_LINKEDIN_URL ?? '',
-    github: import.meta.env.VITE_GITHUB_URL ?? 'https://github.com/Sharpista',
+    github: import.meta.env.VITE_GITHUB_URL || 'https://github.com/Sharpista',
   },
   /**
    * Endpoint público do formulário (Formspree ou similar).
